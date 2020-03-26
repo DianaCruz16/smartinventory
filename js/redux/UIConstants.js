@@ -14,5 +14,5 @@ export const LIST_MODE_MODEL = 'LIST_MODE_MODEL';
 export const LIST_MODE_PORTAL = 'LIST_MODE_PORTAL';
 export const LIST_MODE_EFFECT = 'LIST_MODE_EFFECT'
 export const LIST_TITLE_MODELS = 'Objects';
-export const LIST_TITLE_PORTALS = 'Portals';
+// export const LIST_TITLE_PORTALS = 'Portals';
 export const LIST_TITLE_EFFECTS = 'Effects';

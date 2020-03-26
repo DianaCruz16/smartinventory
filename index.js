@@ -11,7 +11,7 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import App from './js/app';
+import App from './init';
 var reducers = require('./js/redux/reducers');
 
 import {

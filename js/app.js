@@ -73,7 +73,7 @@ export class App extends Component {
     super(props);
 
     this._renderShareScreen = this._renderShareScreen.bind(this);
-    this._renderButtonLeftMenu = this._renderButtonLeftMenu.bind(this);
+    // this._renderButtonLeftMenu = this._renderButtonLeftMenu.bind(this);
     this._renderRecord = this._renderRecord.bind(this);
     this._startRecording = this._startRecording.bind(this);
     this._stopRecording = this._stopRecording.bind(this);
@@ -144,8 +144,8 @@ export class App extends Component {
           {this._renderContextMenu()}
 
           {/* This menu contains the buttons on bottom left corner - toggle listview contents between 
-          Portals, Effects and Models (objects) */}
-          {this._renderButtonLeftMenu()}
+          Portals, Effects and Models (objects) 
+          {this._renderButtonLeftMenu()}*/}
 
           {/* 2D UI for sharing rendered after user finishes taking a video / screenshot */}
           {this._renderShareScreen()}
@@ -411,7 +411,7 @@ _renderShareScreen() {
         <View style={{position:'absolute', left:85, bottom:20, width:40, height:40}}>
          <ShareScreenButton onPress={()=>{this._openShareActionSheet()}}
           buttonState={'off'}
-          stateImageArray={[require("./res/btn_share.png"), require("./res/btn_share.png")]}
+          // stateImageArray={[require("./res/btn_share.png"), require("./res/btn_share.png")]}
           style={localStyles.previewScreenButtonShare} />
         </View>
       </View>
@@ -421,47 +421,47 @@ _renderShareScreen() {
 
 // This menu shows up over the AR view at bottom left side of the screen, centered vertically and consists of 3 buttons
 // to toggle listview contents between Portals, Effects and Objects.
-_renderButtonLeftMenu() {
-  var buttons = [];
-  // Portal mode button
-  buttons.push(
-      <ButtonComponent key="button_portals"
-        onPress={()=>{this.props.dispatchSwitchListMode(UIConstants.LIST_MODE_PORTAL, UIConstants.LIST_TITLE_PORTALS)}}
-        buttonState={(this.props.listMode==UIConstants.LIST_MODE_PORTAL) ? 'on':'off'}
-        stateImageArray={[require("./res/btn_mode_portals_on.png"), require("./res/btn_mode_portals.png")]}
-        style={localStyles.screenIcon} selected={(this.props.listMode == UIConstants.LIST_MODE_PORTAL)}
-        />);
+// _renderButtonLeftMenu() {
+//   var buttons = [];
+//   // Portal mode button
+//   buttons.push(
+//       <ButtonComponent key="button_portals"
+//         onPress={()=>{this.props.dispatchSwitchListMode(UIConstants.LIST_MODE_PORTAL, UIConstants.LIST_TITLE_PORTALS)}}
+//         buttonState={(this.props.listMode==UIConstants.LIST_MODE_PORTAL) ? 'on':'off'}
+//         stateImageArray={[require("./res/btn_mode_portals_on.png"), require("./res/btn_mode_portals.png")]}
+//         style={localStyles.screenIcon} selected={(this.props.listMode == UIConstants.LIST_MODE_PORTAL)}
+//         />);
 
-  // Effect mode button
-  buttons.push(
-      <ButtonComponent key="button_effects"
-        onPress={()=>{this.props.dispatchSwitchListMode(UIConstants.LIST_MODE_EFFECT, UIConstants.LIST_TITLE_EFFECTS)}}
-        buttonState={(this.props.listMode==UIConstants.LIST_MODE_EFFECT) ? 'on':'off'}
-        stateImageArray={[require("./res/btn_mode_effects_on.png"), require("./res/btn_mode_effects.png")]}
-        style={localStyles.screenIcon} selected={(this.props.listMode == UIConstants.LIST_MODE_EFFECT)}
-        />);
+//   // Effect mode button
+//   buttons.push(
+//       <ButtonComponent key="button_effects"
+//         onPress={()=>{this.props.dispatchSwitchListMode(UIConstants.LIST_MODE_EFFECT, UIConstants.LIST_TITLE_EFFECTS)}}
+//         buttonState={(this.props.listMode==UIConstants.LIST_MODE_EFFECT) ? 'on':'off'}
+//         stateImageArray={[require("./res/btn_mode_effects_on.png"), require("./res/btn_mode_effects.png")]}
+//         style={localStyles.screenIcon} selected={(this.props.listMode == UIConstants.LIST_MODE_EFFECT)}
+//         />);
 
-  // Objects mode button
-  buttons.push(
-      <ButtonComponent key="button_models"
-          onPress={()=>{this.props.dispatchSwitchListMode(UIConstants.LIST_MODE_MODEL, UIConstants.LIST_TITLE_MODELS)}}
-          buttonState={(this.props.listMode==UIConstants.LIST_MODE_MODEL) ? 'on':'off'}
-          stateImageArray={[require("./res/btn_mode_objects_on.png"), require("./res/btn_mode_objects.png")]}
-          style={localStyles.screenIcon} selected={(this.props.listMode == UIConstants.LIST_MODE_MODEL)}
-          />);
+//   // Objects mode button
+//   buttons.push(
+//       <ButtonComponent key="button_models"
+//           onPress={()=>{this.props.dispatchSwitchListMode(UIConstants.LIST_MODE_MODEL, UIConstants.LIST_TITLE_MODELS)}}
+//           buttonState={(this.props.listMode==UIConstants.LIST_MODE_MODEL) ? 'on':'off'}
+//           stateImageArray={[require("./res/btn_mode_objects_on.png"), require("./res/btn_mode_objects.png")]}
+//           style={localStyles.screenIcon} selected={(this.props.listMode == UIConstants.LIST_MODE_MODEL)}
+//           />);
 
-  // Show these buttons only if we are in main screen or while recording -> Buttons not rendered when in share screen or when manipulating individual portals
-  if(this.props.currentScreen == UIConstants.SHOW_MAIN_SCREEN || this.props.currentScreen == UIConstants.SHOW_RECORDING_SCREEN) {
-    if (this.state.showPhotosSelector==false) {
-    return (
-         <View style={{position:'absolute', flexDirection:'column', justifyContent: 'space-around',left:10, bottom:70, width:70, height:160, flex:1}}>
-            {buttons}
-         </View>
-      );
-    }
-  }
-  return null;
-}
+//   // Show these buttons only if we are in main screen or while recording -> Buttons not rendered when in share screen or when manipulating individual portals
+//   if(this.props.currentScreen == UIConstants.SHOW_MAIN_SCREEN || this.props.currentScreen == UIConstants.SHOW_RECORDING_SCREEN) {
+//     if (this.state.showPhotosSelector==false) {
+//     return (
+//          <View style={{position:'absolute', flexDirection:'column', justifyContent: 'space-around',left:10, bottom:70, width:70, height:160, flex:1}}>
+//             {buttons}
+//          </View>
+//       );
+//     }
+//   }
+//   return null;
+// }
 
 // Render UI for Video Recording and taking Screenshots
 _renderRecord() {

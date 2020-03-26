@@ -96,11 +96,11 @@ def enableProguardInReleaseBuilds = false
 android {
     compileSdkVersion 28
     buildToolsVersion "28.0.3"
+    flavorDimensions "platform"
 
     defaultConfig {
-        flavorDimensions "platform"
         applicationId "com.viro.figment"
-        minSdkVersion 24
+        minSdkVersion 23
         targetSdkVersion 28
         multiDexEnabled true
         versionCode 5
@@ -126,6 +126,10 @@ android {
         }
     }
     productFlavors {
+        ar {
+            resValue 'string', 'app_name', 'ViroSample-ar'
+            buildConfigField 'String', 'VR_PLATFORM', '"GVR"' //default to GVR
+        }
         gvr {
             dimension "platform"
             resValue 'string', 'app_name', 'Figment-gvr'
@@ -168,6 +172,8 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-gesture-handler')
+    implementation project(':react-native-reanimated')
     implementation project(':react-native-video')
     implementation project(':react-native-share')
     implementation project(':lottie-react-native')

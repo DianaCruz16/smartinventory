@@ -90,10 +90,7 @@ class FigmentListView extends Component {
                     <ActivityIndicator style={{position:'absolute', marginLeft: 12, marginTop: 19, }} animating={true} size='large'/>
                 )}
                 
-                {renderIf(this._isSelected(data, rowId),
-                  <Image source={require("../res/icon_effects_selected_pink.png")} style={styles.photoSelection} />
-                )}
-          </View>                    
+            </View>                    
         );
     }
 

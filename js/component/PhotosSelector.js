@@ -40,44 +40,7 @@ var REF_DELIM = "_";
 
 // Data Source for STOCK photos and videos we ship with the app
 var STOCK_360_PHOTOS = [
-  {
-    source : require('../res/mediademo_pikeplace_360.mp4'),
-    thumbnail_img : require('../res/mediademo_pikeplace_360_thumbnail.png'),
-    height : 1920,
-    width : 3840,
-    type : PSConstants.PS_TYPE_360_VIDEO,
-  },
-  {
-    source : require('../res/360_diving.jpg'),
-    height : 1,
-    width : 2,
-    type : PSConstants.PS_TYPE_360_PHOTO,
-  },
-  {
-    source : require('../res/360_guadalupe.jpg'),
-    height : 1,
-    width : 2,
-    type : PSConstants.PS_TYPE_360_PHOTO,
-  },
-  {
-    source : require('../res/360_space.jpg'),
-    height : 1,
-    width : 2,
-    type : PSConstants.PS_TYPE_360_PHOTO,
-  },
-  {
-    source : require('../res/360_waikiki.jpg'),
-    height : 1,
-    width : 2,
-    type : PSConstants.PS_TYPE_360_PHOTO,
-  },
-    {
-    source : require('../res/360_westlake.jpg'),
-    height : 1,
-    width : 2,
-    type : PSConstants.PS_TYPE_360_PHOTO,
-  },
-];
+     ];
 
 /**
  * Class for Camera Roll Processing and related UI. This is needed when user wants to interact/manipulate

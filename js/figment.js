@@ -208,9 +208,6 @@ ViroMaterials.createMaterials({
     shininess: 2.0,
     diffuseColor: "#ff999900"
   },
-  theatre: {
-    diffuseTexture: require('./res/360_dark_theatre.jpg'),
-  },
 });
 
 // -- REDUX STORE

@@ -26,12 +26,6 @@ class BirthdayCakeEmitter extends Component {
               loop={true}
               fixedToEmitter={true}
 
-              image={{
-                source:require("../../res/particle_fire.png"),
-                height:0.3,
-                width:0.3,
-              }}
-
               spawnBehavior={{
                 particleLifetime:[500,500],
                 emissionRatePerSecond:[30, 40],

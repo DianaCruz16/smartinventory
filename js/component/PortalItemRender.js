@@ -210,21 +210,10 @@ var PortalItemRender = createReactClass({
                 shadowNearZ={.1}
                 shadowFarZ={5}
                 shadowOpacity={.9} />);
-            viewArray.push(<Viro3DObject
-                  key="obj_3d"
-                  position={[0,-2,-6]}
-                  scale={[0.5,0.5,0.5]}
-                  source={require('../res/art_gallery/artgallery3.vrx')}
-                  resources={[require('../res/art_gallery/art_gallery_projector_diffuse.png'),
-                       require('../res/art_gallery/art_gallery_projector_specular.png'),
-                       require('../res/art_gallery/art_gallery_walls_diffuse.png'),
-                       require('../res/art_gallery/art_gallery_walls_specular.png')]}
-                  type="VRX" />
-              );
+            viewArray.push( );
 
             viewArray.push(<ViroImage key="image_portal" width={2} height={4}  resizeMode='ScaleToFill' imageClipMode='None' source={portalSource.source}
                         position={[0, 0.8,-5.8]} scale={[1, 1, 1]} />);
-            viewArray.push(<Viro360Image key="background_portal_image" source={require('../res/360_space.jpg')} />);
 
           }
           return viewArray;

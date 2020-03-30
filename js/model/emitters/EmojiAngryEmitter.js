@@ -29,12 +29,6 @@ class EmojiAngryEmitter extends Component {
               loop={true}
               fixedToEmitter={true}
 
-              image={{
-                source:require("../../res/particle_smoke.png"),
-                height:1,
-                width:1,
-              }}
-
               spawnBehavior={{
                 particleLifetime:[500,500],
                 emissionRatePerSecond:[200,200],
@@ -71,12 +65,6 @@ class EmojiAngryEmitter extends Component {
               run={true}
               loop={true}
               fixedToEmitter={true}
-
-              image={{
-                source:require("../../res/particle_smoke.png"),
-                height:1,
-                width:1,
-              }}
 
               spawnBehavior={{
                 particleLifetime:[500,500],

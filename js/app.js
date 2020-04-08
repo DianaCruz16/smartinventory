@@ -37,6 +37,7 @@ const kPreviewTypeVideo = 2;
 
 
 import {
+  FlatList,
   AppRegistry,
   Text,
   View,
@@ -238,6 +239,12 @@ _renderContextMenu() {
   var selectedItemIndex = this.props.currentItemSelectionIndex;
   var clickState = this.props.currentItemClickState;
   var totalHeight = 120;
+  var totalItemSelected = require('./figment');   
+  var renderedObjects = require('./figment');   
+  var t = [totalItemSelected.length];
+
+  //Consola para ver los datos que carga
+  console.log(renderedObjects);
   if(this.props.currentSelectedItemType != UIConstants.LIST_MODE_PORTAL) {
       totalHeight = 80;
   }
@@ -253,6 +260,17 @@ _renderContextMenu() {
   }
     return (
       <View style={{flex:1, position:'absolute', flexDirection:'column', justifyContent: 'space-between', alignItems: 'flex-end', top:'25%', right:10,width:80, height:220}}>
+        
+        
+          <FlatList
+            data={[
+              //{key: 'datos: '+t},
+              {key: renderedObjects[0]},
+              {key: renderedObjects[1]},  
+            ]}
+            renderItem={({item}) => <Text>{item.key}</Text>}
+          /> 
+        
         <View style={{flex:.45, flexDirection:'column', justifyContent: 'space-between',alignItems: 'flex-end', right:0, top:20, width:80}}>
           {renderIf(this.props.currentItemSelectionIndex != -1 && (this.state.showPhotosSelector==false),
             <ContextMenuButton onPress={this._onContextMenuRemoveButtonPressed} 
@@ -274,6 +292,10 @@ _renderContextMenu() {
                     style={localStyles.previewScreenButtonsAddPic} />
           )}
         </View>
+
+        
+
+
       </View>
 
   );

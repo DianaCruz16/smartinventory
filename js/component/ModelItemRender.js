@@ -66,6 +66,8 @@ var ModelItemRender = createReactClass({
 
     render: function() {
         var modelItem = ModelData.getModelArray()[this.props.modelIDProps.index];
+        var itemSelected = modelItem.name;
+        module.exports = itemSelected;
         let transformBehaviors = {};
         if (this.state.shouldBillboard) {
           transformBehaviors.transformBehaviors = this.state.shouldBillboard ? "billboardY" : [];

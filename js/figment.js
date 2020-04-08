@@ -101,13 +101,18 @@ export class figment extends Component {
   //           Viro3DObject's "shadowCastingBitMask" and "lightReceivingBitMask" and Shadow plane (ViroQuad)'s "lightReceivingBitMask"
   _renderModels(modelItems, startingBitMask) {
     var renderedObjects = [];
+    var totalItemSelected = []; 
+    module.exports = totalItemSelected;
+    var itemSelected = require('./component/ModelItemRender');
     if(modelItems) {
       var root = this;
       let objBitMask = startingBitMask;
       Object.keys(modelItems).forEach(function(currentKey) {
         if(modelItems[currentKey] != null && modelItems[currentKey] != undefined) {
+          totalItemSelected.push(itemSelected);
           renderedObjects.push(
-            <ModelItemRender key={modelItems[currentKey].uuid}
+            <ModelItemRender 
+              key={modelItems[currentKey].uuid}
               modelIDProps={modelItems[currentKey]}
               hitTestMethod={root._performARHitTest}
               onLoadCallback={root._onLoadCallback}
